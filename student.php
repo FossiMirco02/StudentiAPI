@@ -22,9 +22,9 @@ switch($method) {
     $student = new Student();
     echo "<html><head></head><body><form method='post'><input type='text' name='name'><input type='text' name='surname'><input type='text' name='sidi'><input type='text' name='tax'></form></body></html>";
     $student->_name = $_POST["name"];
-    $student->_name = $_POST["surname"];
-    $student->_name = $_POST["sidi"];
-    $student->_name = $_POST["tax"];
+    $student->_surname = $_POST["surname"];
+    $student->_sidicode = $_POST["sidi"];
+    $student->_taxCode = $_POST["tax"];
 
       $student->post($student);
       $js_encode = json_encode(array('state'=>TRUE, 'student'=>$student),true);
@@ -56,9 +56,9 @@ switch($method) {
     echo "<html><head></head><body><form method='post'><input type='text' name='id'><input type='text' name='name'><input type='text' name='surname'><input type='text' name='sidi'><input type='text' name='tax'></form></body></html>";
     $student->_id = $_POST["id"];
     $student->_name = $_POST["name"];
-    $student->_name = $_POST["surname"];
-    $student->_name = $_POST["sidi"];
-    $student->_name = $_POST["tax"];
+    $student->_surname = $_POST["surname"];
+    $student->_sidicode = $_POST["sidi"];
+    $student->_taxCode = $_POST["tax"];
     $student->put($student);
     $js_encode = json_encode(array('state'=>TRUE, 'student'=>$student),true);
     header("Content-Type: application/json");
