@@ -42,24 +42,26 @@ class Student
     return $result;
   }
   public function post($student){
-    $sql = "INSERT INTO student VALUES ($student)";
+    $sql="INSERT into student (name, surname, sidi_code, tax_code) values (:name,:surname,:sidiCode,:taxCode)";
     $stmt = $this->db->prepare($sql);
     $data = [
-      'student' => $student
+      'name' => $student->_name,
+	  'surname' => $student->_surname,
+	  'sidiCode' => $student->_sidiCode,
+	  'taxCode' => $student->_taxCode
     ];
     $stmt->execute($data);
-    $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-    return $result;
   }
   public function put($student){
-    $sql = "UPDATE INTO student VALUES ($student)";
+    $sql = "UPDATE student set name=:name, surname=:surname, sidi_code=:sidiCode, tax_code=:taxCode WHERE id=:id";
     $stmt = $this->db->prepare($sql);
     $data = [
-      'student' => $student
+      'name' => $student->_name,
+	  'surname' => $student->_surname,
+	  'sidiCode' => $student->_sidiCode,
+	  'taxCode' => $student->_taxCode
     ];
     $stmt->execute($data);
-    $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-    return $result;
   }
 }
 ?>

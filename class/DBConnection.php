@@ -1,7 +1,7 @@
 <?php
 // Database Connection
 class DBConnection {
-    private $_dbHostname = "localhost:3306";
+    private $_dbHostname = "localhost:3333";
     private $_dbName = "FI_ITIS_MEUCCI";
     private $_dbUsername = "root";
     private $_dbPassword = "";
